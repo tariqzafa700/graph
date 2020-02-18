@@ -7,6 +7,16 @@ class Iterable
     public:
         Iterable(T begin, T end) : _begin(begin), _end(end)
         { }
+
+      T begin()
+      {
+          return _begin;
+      }
+
+      T end()
+      {
+          return _end;
+      }
     
     private:
         T _begin;

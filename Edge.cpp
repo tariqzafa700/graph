@@ -24,3 +24,9 @@ int Edge::getWeight() const
 {
     return this->weight;
 }
+
+ostream& operator << (std::ostream& os, const Edge& obj)
+{
+   os << obj.getSrc() << "," << obj.getDest() << "->" << obj.getWeight() << '\t';
+   return os;
+}

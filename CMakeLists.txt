@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(Graph VERSION 0.1.0)
 
-set(SOURCE_FILES main.cpp Edge.cpp EdgeParserImpl.cpp PriorityQueue.cpp EdgeParserWeightedImpl.cpp Graph.cpp DiGraph.cpp WeightedGraph.cpp )
+set(SOURCE_FILES main.cpp Edge.cpp EdgeParserImpl.cpp EdgeParserWeightedImpl.cpp
+                 Graph.cpp DiGraph.cpp 
+                 WeightedGraph.cpp WeightedDiGraph.cpp Djikstra.cpp)
 include_directories( ./ )
 link_directories( ./ )
 

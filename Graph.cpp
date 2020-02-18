@@ -36,10 +36,10 @@ void Graph::addEdge(const Edge& edge)
     int startVertex = edge.getSrc();
     int endVertex = edge.getDest();
     int weight = edge.getWeight();
-    list<pair<int, int>>& iter1 = adjList[startVertex];
-    iter1.push_back(make_pair(endVertex, weight));
-    list<pair<int, int>>& iter2 = adjList[endVertex];
-    iter2.push_back(make_pair(startVertex, weight));
+    list<Edge>& iter1 = adjList[startVertex];
+    iter1.push_back(Edge(edge.getSrc(), edge.getDest(), edge.getWeight()));
+    list<Edge>& iter2 = adjList[endVertex];
+    iter2.push_back(Edge(edge.getDest(), edge.getSrc(), edge.getWeight()));
     nEdges++;
 }
 
@@ -59,13 +59,11 @@ int Graph::getNVertices()
 }
 
 void Graph::print()
-{
+{   
     int count = 0;
-    for_each(adjList.begin(), adjList.end(), [&count](list<pair<int, int>>& each) {
+    for_each(adjList.begin(), adjList.end(), [&count](list<Edge>& each) {
         cout << "List [" << count++ << "] ";
-        for_each(each.begin(), each.end(), [](pair<int, int> item) {
-            cout << item.first << '\t';
-        });
+        copy(each.begin(), each.end(), ostream_iterator<Edge>(std::cout, " "));
         cout << '\n';
     });
 }

@@ -2,6 +2,7 @@
 #include <list>
 #include <vector>
 #include <algorithm>
+#include <iterator>
 #include <iostream>
 #include <cstdlib>
 #include "GraphInf.h"
@@ -18,7 +19,7 @@ class Graph : public GraphInf
       int nVertices;
       int nEdges;
       list<Edge> edgeList;
-      vector<list<pair<int, int>>> adjList;
+      vector<list<Edge>> adjList;
     public:
       Graph(int v);
       Graph(stringstream& in, const EdgeParser& parser);

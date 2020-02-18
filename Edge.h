@@ -1,7 +1,11 @@
+#include <iostream>
 #include "Comparable.h"
+
+using namespace std;
 
 #ifndef __EDGE_H__
 #define __EDGE_H__
+
 class Edge : public Comparable<Edge>
 {
     public:
@@ -10,6 +14,7 @@ class Edge : public Comparable<Edge>
       int getSrc() const;
       int getDest() const;
       int getWeight() const;
+      friend ostream& operator<<(std::ostream& os, const Edge& obj);
     private:
       int src;
       int dest;

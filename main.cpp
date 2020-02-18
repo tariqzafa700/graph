@@ -10,6 +10,8 @@
 
 using namespace std;
 
+int getShortestPathValue(Graph& graph, int start, int end);
+
 stringstream getDataStream(const string& file)
 {
     stringstream ss;
@@ -36,14 +38,9 @@ stringstream getDataStream(const string& file)
 
 int main()
 {
-    
-    auto ss = getDataStream("../input.txt");
-    DiGraph graph2(ss, EdgeParserImpl());
-    graph2.init();
-    graph2.print();
-
-    ss = getDataStream("../weighted-input.txt");
+    auto ss = getDataStream("../weighted-input.txt");
     WeightedGraph graph3(ss, EdgeParserWeightedImpl());
     graph3.init();
     graph3.print();
+    getShortestPathValue(graph3, 0, 4);
 }

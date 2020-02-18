@@ -1,11 +1,11 @@
-#include "WeightedGraph.h"
+#include "WeightedDiGraph.h"
 
-WeightedGraph::WeightedGraph(stringstream& ss, const EdgeParser& parser) : Graph(ss, parser)
+WeightedDiGraph::WeightedDiGraph(stringstream& ss, const EdgeParser& parser) : DiGraph(ss, parser)
 {
 
 }
 
-void WeightedGraph::print()
+void WeightedDiGraph::print()
 {
     int count = 0;
     for_each(adjList.begin(), adjList.end(), [&count](list<Edge>& each) {
